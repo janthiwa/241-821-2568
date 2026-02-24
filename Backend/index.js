@@ -1,16 +1,40 @@
 // ทำการ import http module เพื่อสร้าง Server
-const http = require('http');
-const host = 'localhost';
-const port = 8000;
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2/promise');
+const app = express();
+const port = 8000
+app.use(bodyParser.json());
 
-//กำหนดค่าเริ่มต้นของ server เมื่อเปิดใช้งาน เว็บผ่านเบราว์เซอร์ ที่ localhost:8000
-const requestListener = function(req, res){
-    res.writeHead(200);
-    res.end('My First Server!');
+let conn = null
+const initDBConnection = async () => {
+    conn = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'wabdb',
+        port: 8821
+    })
 }
 
-//run server
-const server = http.createServer(requestListener);
-server.listen(port, host, () => {
-    console.log('Server is running at http://${host}:${port}');
+//path = GET /users สำหรับ get ข้อมูล user ทั้งหมด
+app.get('/users', async (req, res) => {
+    const results = await conn.query('SELECT * FROM users');
+    res.json(results[0]);
+})
+
+// path = POST /users สำหรับเพิ่ม user ใหม่
+app.post('/users', async (req, res) => {
+    let user = req.body;
+    const results = await conn.query('INSERT INTO users SET ?', user);
+    console.log('results:', results);
+    res.json({
+        message: 'User created successfully',
+        data: results[0]
+    });
+})
+
+app.listen(port, async () => {
+    await initDBConnection();
+    console.log(`Server is running on port ${port}`)
 });
