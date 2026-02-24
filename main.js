@@ -35,7 +35,7 @@ let numbers = [90, 60, 80, 40, 50];
 numbers.sort();
 console.log(numbers); // [40, 50, 60, 80, 90]
 
-let name.push("John , "Jane", "Doe");
+//let name.push("John , "Jane", "Doe");
 name.push("Smith");
 console.log(name);
 console.log(name.length);
@@ -48,9 +48,9 @@ for (let i = 0; i < name.length; i++) {
 object
  */
 let stusdent = [{
-let age = 20
-let name = "Emmma"
-let grade = "A"
+//let age = 20
+//let name = "Emmma"
+//let grade = "A"
 },{
     age: 22,
     name: "Liam",
@@ -83,17 +83,17 @@ function
 //ประกาศฟังก์ชัน
 function calculate_grade(score) {
     if (score >= 90) {
-        grade "A";
+//        grade "A";
     } else if (score >= 80) {
-        grade "B";
+ //       grade "B";
     } else if (score >= 70) {
-        grade "C";
+ //       grade "C";
     } else if (score >= 60) {
-        grade "D";
+ //       grade "D";
     } else {
-        grade "F";
+ //       grade "F";
     }
-    return grade;
+ //   return grade;
 }
 
 // เรียกใช้ฟังก์ชัน
@@ -112,13 +112,13 @@ for (let i = 0; i < scores.length; i++) {
     console.log(`Score at index ${i} is ${scores[i]}`);
 }
 
-scores.forEach(function(s)) => {
+//scores.forEach(function(s)) => {
     console.log('score: ' , s)
-}
 
-score = score.map(s) => {
+
+//score = score.map(s) => {
     return s + 2;
-}
+
 
 score[0] = scores[0] + 2;    
  
@@ -133,9 +133,9 @@ let newScore = []
 for (let index = 0; index < scores.length; index++) {
     console.log('score: ' , scores[index])
 }
-let newScore = scores.filter((s) => {
+//let newScore = scores.filter((s) => {
     return s >= 30;
-})
+//})
 
 newScore.forEach((ns) => {
  console.log('new score: ' , ns)
@@ -161,17 +161,17 @@ let student = students.find((s) => {
 
 })
 
-let dublescore_student = students.map(s => {
+//let dublescore_student = students.map(s => {
     s.score = s.score * 2
     return s;
-}
-console.log('student;' ,student)
-console.log(dublescore_student)
 
-let highscore_students = students.filter(s => {
-    if (s.score >= 110) {
-        return true;
-    }
-})
+//console.log('student;' ,student)
+//console.log(dublescore_student)
 
-console.log('highScore_student: ' , highScore_students)
+//let highscore_students = students.filter(s => {
+ //   if (s.score >= 110) {
+ //       return true;
+//    }
+//})
+
+//console.log('highScore_student: ' , highScore_students
