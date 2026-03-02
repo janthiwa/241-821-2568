@@ -5,6 +5,7 @@ docker run hello-world
 docker run busybox ls
 docker run busybox ping google.com
 // Run nginx
+node index.js
 docker run nginx
 docker run -p 80:80 nginx
 docker run -p 9000:80 nginx
