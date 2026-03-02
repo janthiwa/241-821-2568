@@ -40,12 +40,12 @@ const submitData = async () => {
         }
 
         let userData = {
-            firstName: firstNameDOM.value,
-            lastName: lastNameDOM.value,
+            firstname: firstNameDOM.value,
+            lastname: lastNameDOM.value,
             age: ageDOM.value,
             gender: genderDOM ? genderDOM.value : '', 
             description: descriptionDOM.value,
-            interests: interest
+            intereste: interest
         }
 
         console.log('Sending data:', userData);
@@ -60,7 +60,7 @@ const submitData = async () => {
         // lastNameDOM.value = '';
 
     } catch (error) {
-        console.error('เกิดข้อผิดพลาด:', error);
-        displayMessage('บันทึกข้อมูลไม่สำเร็จ ❌', 'error');
+    console.error('เกิดข้อผิดพลาด:', 'error');
+    displayMessage('บันทึกข้อมูลไม่สำเร็จ ❌', 'error');
     }
 }
