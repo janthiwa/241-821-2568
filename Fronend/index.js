@@ -31,11 +31,11 @@ const submitData = async () => {
 
     let messageDOM = document.getElementById('message')
     try {
-        let interest = ''
+        let interests = ''
         for (let i = 0; i < interestDOMs.length; i++) {
-            interest += interestDOMs[i].value
+            interests += interestDOMs[i].value
             if (i != interestDOMs.length - 1) {
-                interest += ','
+                interests += ','
             }
         }
 
@@ -45,7 +45,7 @@ const submitData = async () => {
             age: ageDOM.value,
             gender: genderDOM.value,
             description: descriptionDOM.value,
-            interests: interest
+            interests: interests
         }
 
        const errors = validateData(userData);
@@ -74,8 +74,8 @@ const submitData = async () => {
         let htmlData = '<div>'
         htmlData += `<div>${error.message}</div>`
         htmlData += '<ul>'
-        for (let i = 0; i < error.errors.length; i++) {
-            htmlData += `<li>${error.errors[i]}</li>`
+        for (let i = 0; i < (error.errors?.length || 0); i++) {
+        htmlData += `<li>${error.errors[i]}</li>`
         }
         htmlData += '</ul>'
         htmlData += '</div>'

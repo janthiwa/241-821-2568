@@ -1,6 +1,5 @@
 // 1. load user ทั้งหมดจาก api /users
 const BASE_URL = 'http://localhost:8000';
-
 window.onload = async () => {
     await loadData();
 }
@@ -20,7 +19,6 @@ const loadData = async () =>{
             <button class='delete' data-id='${user.id}'>Delete</button>
         </div>`;
     }
-}
 
     htmlData += '</div>';
     userDOM.innerHTML = htmlData;
@@ -34,11 +32,10 @@ for (let i = 0; i < deleteDOMs.length; i++) {
         
         try {
             await axios.delete(`${BASE_URL}/users/${id}`);
-            loadData
-            alert('Delete user successfully');
-
+            loadData()
         } catch (error) {
             console.error(error);
         }
     });
+}
 }
