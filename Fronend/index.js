@@ -80,6 +80,7 @@ const submitData = async () => {
         htmlData += '</ul>'
         htmlData += '</div>'
         messageDOM.innerHTML = htmlData
-        messageDOM.className = 'message danger'
+        messageDOM.className = 'notification-inline error'
+        messageDOM.style.display = 'block';
     }
 }
