@@ -22,7 +22,7 @@ const initMySQL = async () => {
     });
 }
 
-//path = GET /users สำหรับด get ข้อมูล users ทั้งหมด
+//path = GET /users สำหรับ get ข้อมูล users ทั้งหมด
 app.get('/users', async (req, res) => {
     const results = await conn.query('SELECT * FROM users')
     res.json(results[0]);
